@@ -5,7 +5,6 @@ import InfoIcon from '@material-ui/icons/Info';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { useState } from "react"
-import { getWindowDimensions, activateScroll } from "../Components/LandingScrollFunction";
 export default function HomePg(props) {
     const [slider, setSlider] = useState(false)
     const [distance,setDistance] =useState(4)
@@ -50,7 +49,7 @@ const timerFWD = ()=>{
             flexDirection: 'column',
             backgroundColor: 'green',
             height:slider===true?window.height - 200:"40vh",
-            width: slider==true? "20%" :"20%" ,
+            width: slider===true? "20%" :"20%" ,
             justifyContent: 'space-evenly',
             alignItems: 'center',
             borderRadius:"20%",
@@ -79,7 +78,7 @@ const timerFWD = ()=>{
                     <a href='https://www.freepik.com/vectors/background'>Basckground vector created by liuzishan - www.freepik.com</a>
                 </div>
                 <div className={classes.sidebar}>
-                    {slider == true ? <ArrowForwardIosIcon onClick={controlSlider} /> : <ArrowBackIosIcon onClick={controlSlider} />}
+                    {slider === true ? <ArrowForwardIosIcon onClick={controlSlider} /> : <ArrowBackIosIcon onClick={controlSlider} />}
                     <HomeIcon className={classes.toggle} />
                     <ComputerIcon className={classes.toggle} />
                     <InfoIcon className={classes.toggle} />
