@@ -1,5 +1,4 @@
 import {useState,useEffect} from "react"
-import profilePic from "./img/hmPage.jpg";
 import homeImg from "./img/hmPage.jpg"
 import LandingImage from "./img/Vector_2646.jpg"
 import { makeStyles } from '@material-ui/core/styles';
