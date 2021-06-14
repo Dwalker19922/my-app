@@ -4,7 +4,8 @@ import LandingImage from "./img/Vector_2646.jpg"
 import { makeStyles } from '@material-ui/core/styles';
 import TDiv from "./Components/ToggleArrow";
 import './App.css';
-import{getWindowDimensions} from"./Components/LandingScrollFunction"
+import{getWindowDimensions} from"./Components/LandingScrollFunction";
+import HomePg from "./Components/home"
 const preload = homeImg
 localStorage.setItem("preloadImg",preload)
 const home = localStorage.getItem("preloadImg")
@@ -44,7 +45,7 @@ const styled = makeStyles({
     color: "white",
     padding:"3%",
     backgroundSize: "cover",
-    marginTop:`${distance + windowDimensions.height-30}px`,
+    marginTop:`${distance + windowDimensions.height+100}px`,
     width:`${windowDimensions.width}px`,
     height:`${windowDimensions.height}px`,
     
@@ -68,7 +69,6 @@ const activateScroll=(distance,setDistance,clickState,maxDist)=>{
   console.log(distance)
   const classes = styled();
   return (
-    <>
     <div className={classes.app}>
       
     <div className="coverInfo">
@@ -82,11 +82,10 @@ const activateScroll=(distance,setDistance,clickState,maxDist)=>{
   
       <a className="ReqAtt" href='https://www.freepik.com/vectors/background'>Background vector created by liuzishan - www.freepik.com</a>
       
+    
+    {scroll===false?<></>:<HomePg classes={classes}/>}
     </div>
-    {scroll===false?<></>:<div className={classes.home}>
-      </div>}
-    <a href='https://www.freepik.com/vectors/background'>Background vector created by liuzishan - www.freepik.com</a>
-    </>
+    
   );
 }
 
